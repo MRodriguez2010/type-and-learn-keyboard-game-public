@@ -1,0 +1,65 @@
+.doodle {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+  gap: clamp(6px, 1.2vmin, 12px);
+}
+
+.hands {
+  display: flex;
+  min-height: clamp(150px, 27vmin, 286px);
+  align-items: end;
+  justify-content: center;
+  gap: clamp(2px, 1vmin, 10px);
+}
+
+.handImage {
+  display: block;
+  width: clamp(96px, 16vmin, 172px);
+  height: clamp(148px, 26vmin, 278px);
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 15px 16px rgb(0 0 0 / 20%));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hands[data-hand-layout="single"] .handImage {
+  width: clamp(126px, 22vmin, 228px);
+  height: clamp(168px, 30vmin, 310px);
+}
+
+.handImage[data-mirror="true"] {
+  transform: scaleX(-1);
+}
+
+.doodle > strong {
+  color: var(--key-color);
+  font-size: clamp(1.8rem, 4.5vmin, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .hands {
+    min-height: 122px;
+  }
+
+  .handImage {
+    width: 82px;
+    height: 126px;
+  }
+
+  .hands[data-hand-layout="single"] .handImage {
+    width: 104px;
+    height: 142px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .handImage {
+    transition: none;
+  }
+}

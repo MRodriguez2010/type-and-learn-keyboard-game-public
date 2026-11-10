@@ -1,0 +1,275 @@
+.activity {
+  display: grid;
+  gap: clamp(16px, 3vw, 28px);
+  width: min(100%, 760px);
+  margin-inline: auto;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid color-mix(in srgb, var(--sage) 42%, transparent);
+  border-radius: clamp(24px, 5vw, 42px);
+  background: color-mix(in srgb, var(--surface-raised) 94%, transparent);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 28%);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--sage);
+  font-size: clamp(0.76rem, 2vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.picture {
+  display: grid;
+  place-items: center;
+  min-height: clamp(142px, 28vw, 224px);
+  font-size: clamp(6rem, 20vw, 11rem);
+  line-height: 1;
+  filter: drop-shadow(0 15px 18px rgb(0 0 0 / 22%));
+}
+
+.word {
+  margin: 0;
+  color: var(--ivory);
+  font-size: clamp(2.35rem, 10vw, 5.5rem);
+  font-weight: 950;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.supportGroup {
+  display: grid;
+  gap: 6px;
+}
+
+.support,
+.soundCue {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.soundCue {
+  color: var(--butter);
+  font-weight: 900;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button,
+.choice {
+  min-height: 64px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ivory);
+  font-weight: 900;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+}
+
+.buttonIcon {
+  flex: none;
+}
+
+.primary {
+  border-color: transparent;
+  background: var(--butter);
+  color: var(--button-ink);
+}
+
+.button[aria-disabled="true"],
+.choice[aria-disabled="true"] {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.prompt {
+  margin: 0;
+  color: var(--ivory);
+  font-size: clamp(2rem, 7vw, 4.6rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 3vw, 26px);
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.choice {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  min-height: clamp(180px, 34vw, 286px);
+  padding: clamp(18px, 4vw, 30px);
+  border-radius: clamp(26px, 5vw, 42px);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.choiceEmoji {
+  font-size: clamp(5rem, 16vw, 9rem);
+  line-height: 1;
+}
+
+.choice[data-found="true"] {
+  border-color: var(--sage);
+  background: color-mix(in srgb, var(--sage) 17%, var(--surface));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--sage) 22%, transparent);
+}
+
+.status {
+  min-height: 2.8em;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.4;
+}
+
+@media (max-width: 520px) {
+  .activity {
+    padding: 18px;
+  }
+
+  .choices {
+    gap: 12px;
+  }
+
+  .choice {
+    min-height: 164px;
+    padding: 16px 10px;
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .activity {
+    gap: 8px;
+    max-width: 720px;
+    padding: 12px 18px;
+    border-radius: 22px;
+  }
+
+  .picture {
+    min-height: 88px;
+    font-size: 5rem;
+  }
+
+  .word {
+    font-size: 2.35rem;
+  }
+
+  .supportGroup {
+    gap: 2px;
+  }
+
+  .support,
+  .soundCue {
+    font-size: 0.9rem;
+  }
+
+  .prompt {
+    font-size: 2rem;
+  }
+
+  .choices {
+    gap: 12px;
+  }
+
+  .choice {
+    min-height: 118px;
+    grid-template-columns: auto 1fr;
+    padding: 10px 18px;
+    border-radius: 24px;
+  }
+
+  .choiceEmoji {
+    font-size: 4.25rem;
+  }
+
+  .status {
+    min-height: 1.4em;
+    font-size: 0.9rem;
+  }
+
+  .button,
+  .choice {
+    min-height: 48px;
+  }
+
+  .button {
+    padding: 9px 18px;
+  }
+}
+
+@media (max-height: 420px) and (orientation: landscape) {
+  .activity {
+    gap: 4px;
+    padding: 8px 14px;
+    border-radius: 18px;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+  }
+
+  .picture {
+    min-height: 54px;
+    font-size: 3.5rem;
+  }
+
+  .word,
+  .prompt {
+    font-size: 1.75rem;
+  }
+
+  .support,
+  .soundCue,
+  .status {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .choices {
+    gap: 8px;
+  }
+
+  .choice {
+    min-height: 86px;
+    gap: 6px;
+    padding: 6px 14px;
+  }
+
+  .choiceEmoji {
+    font-size: 3.25rem;
+  }
+
+  .status {
+    min-height: 1.2em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .picture,
+  .choiceEmoji {
+    animation: none !important;
+  }
+}

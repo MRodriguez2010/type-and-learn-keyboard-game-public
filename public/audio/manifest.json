@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "model": "eSpeak NG",
+  "voice": "en-us / es-la",
+  "disclosure": "Offline synthesized educational speech",
+  "locales": [
+    "en-US",
+    "es-419"
+  ],
+  "files": 477,
+  "callouts": 159,
+  "numberCallouts": 20,
+  "talkAndPointClips": 66
+}
